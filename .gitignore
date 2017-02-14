@@ -1,0 +1,14 @@
+
+*.stash
+
+Makefile
+
+*.lproj
+
+simple-qt-gui.app/Contents/PkgInfo
+
+simple-qt-gui.app/Contents/MacOS/simple-qt-gui
+
+*.plist
+
+*.o
