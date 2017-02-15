@@ -12,3 +12,7 @@ simple-qt-gui.app/Contents/MacOS/simple-qt-gui
 *.plist
 
 *.o
+
+moc_mainWindow.cpp
+
+moc_predefs.h
