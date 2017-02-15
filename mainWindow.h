@@ -1,14 +1,4 @@
-#include <QWidget>
-#include <QApplication>
-#include <QPushButton>
-#include <QMainWindow>
-#include <QComboBox>
-#include <QMenu>
-#include <QLabel>
-#include <QLineEdit>
-#include <QtGui>
-
-using namespace std;
+#include "channelWindow.h"
 
 class MainWindow : public QMainWindow
 {
@@ -25,6 +15,12 @@ class MainWindow : public QMainWindow
         QMenu* menuOption;
         QLineEdit* editNumBT;
         QPushButton* btnGenerate;
+        ChannelWindow* channelWindow;
 
-        bool validate();
+        QLabel* lbOption;
+        QLabel* lbNumBT;
+
+        void init();
+        void input();
+        void setup();
 };
