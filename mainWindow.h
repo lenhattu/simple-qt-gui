@@ -18,8 +18,13 @@ class MainWindow : public QMainWindow
         ~MainWindow();
     public slots:
         void resizeMenu();
+    private slots:
+        void onGenerate();
     private:
-        QPushButton *btnOption;
-        QMenu *menuOption;
+        QPushButton* btnOption;
+        QMenu* menuOption;
         QLineEdit* editNumBT;
+        QPushButton* btnGenerate;
+
+        bool validate();
 };

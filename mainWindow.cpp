@@ -24,23 +24,39 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     menuOption->addAction(voltage);
     menuOption->addAction(calcium);
     menuOption->addAction(calciumER);
+    connect(menuOption, SIGNAL(aboutToShow()), this, SLOT(resizeMenu()));
     //init dropdown button for menu
     btnOption = new QPushButton("Select options...", this);
     btnOption->setMenu(menuOption);
     btnOption->setGeometry(175, 50, 200, 50);
-    connect(menuOption, SIGNAL(aboutToShow()), this, SLOT(resizeMenu()));
 
     //init line edit for branchtypes
     QLineEdit* editNumBT = new QLineEdit(this);
     editNumBT->setPlaceholderText("Enter 1 - 7 only");
     editNumBT->setGeometry(183, 95, 100, 20);
+
+    //init 'Generate' button
+    btnGenerate = new QPushButton("GENERATE", this);
+    btnGenerate->setGeometry(150, 130, 100, 50);
+    connect(btnGenerate, &QPushButton::clicked, this, &MainWindow::onGenerate);
 }
 
 MainWindow::~MainWindow()
 {
 }
 
+//resize the width of the dropdown menu
 void MainWindow::resizeMenu()
 {
-    menuOption->setMinimumWidth(btnOption->width()-13);
+    menuOption->setMinimumWidth(btnOption->width() - 13);
+}
+
+//validate input from user
+bool MainWindow::validate()
+{
+}
+
+//on Generate button clicked
+void MainWindow::onGenerate()
+{
 }
