@@ -151,6 +151,10 @@ void ChannelWindow::onAdd()
         if (path != NULL) //is NULL when user clicks cancel
             this->output(path);
     }
+    //refresh all lists
+    listInput.clear();
+    listOutput.clear();
+    listType.clear();
 }
 
 //output result to file

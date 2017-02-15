@@ -144,8 +144,11 @@ void MainWindow::onGenerate()
             this->output(path);
         //go to Channel window
         channelWindow = new ChannelWindow(this, list);
+        channelWindow->setWindowModality(Qt::ApplicationModal);
         channelWindow->show();
     }
+    //refresh the list
+    list.clear();
 }
 
 //output result to file
