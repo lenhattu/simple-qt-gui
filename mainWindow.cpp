@@ -78,7 +78,7 @@ void MainWindow::setup()
 {
     //setup option label
     lbOption->setText("Options:");
-    lbOption->setGeometry(25, 50, 150, 50);
+    lbOption->setGeometry(25, 50, 150, 40);
 
     //number of branchtypes label
     lbNumBT->setText("Number of branchtypes:");
@@ -89,7 +89,7 @@ void MainWindow::setup()
 
     //set menu for dropdown button
     btnOption->setMenu(menuOption);
-    btnOption->setGeometry(175, 50, 200, 50);
+    btnOption->setGeometry(175, 50, 200, 40);
 
     //setup line edit for branchtypes
     editNumBT->setPlaceholderText("Enter 1 - 7 only");
