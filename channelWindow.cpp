@@ -115,4 +115,17 @@ void ChannelWindow::resizeMenuOutput()
 //on Add button clicked
 void ChannelWindow::onAdd()
 {
+    //check selected options
+    bool checkedInput = false, checkedOutput = false;
+    for (int i = 0; i < menuInput->actions().count(); i++)
+    {
+        if (menuInput->actions().at(i)->isChecked())
+        {
+            checkedInput = true;
+        }
+        if (menuOutput->actions().at(i)->isChecked())
+        {
+            checkedOutput = true;
+        }
+    }
 }
