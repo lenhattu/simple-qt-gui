@@ -28,17 +28,18 @@ d. Once 'Generate' button is clicked, the GUI now enables users to add one or mo
     
 <b>*INSTRUCTION TO COMPILE AND RUN*</b>
 
-**NOTE:
+<b>Step 1:</b> You need to install Qt5 or above (Qt4 may NOT work correctly). To install, please go to: http://info.qt.io/download-qt-for-application-development
 
-Step 1: You need to install Qt5 or above (Qt4 may NOT work correctly). To install, please go to: http://info.qt.io/download-qt-for-application-development
-
-Step 2: Download this sourcecode manually or using git to clone it to your local repository.
+<b>Step 2:</b> Download this sourcecode manually or using git to clone it to your local repository.
 
     git clone https://github.com/lenhattu/simple-qt-gui.git
     
-Step 3: Make sure that you set the PATH environment variable for Qt. This step depends on which OS you are using and where your Qt is installed.
+<b>Step 3:</b> Make sure that you set the PATH environment variable for Qt. This step depends on which OS you are using and where your Qt is installed.
 
-Step 4: Use 'qmake' to create Makefile for your machine and run 'make' to compile the sourcecode.
+    MacOS/Linux: http://doc.qt.io/qt-4.8/install-mac.html#step-3-set-the-environment-variables
+    Windows: http://doc.qt.io/qt-4.8/install-win.html#step-3-set-the-environment-variables
+
+<b>Step 4:</b> Use 'qmake' to create Makefile for your machine and run 'make' to compile the sourcecode.
 
 Syntax: (use Terminal for MacOS/Linux or Powershell for Windows)
 
@@ -50,7 +51,7 @@ Syntax: (use Terminal for MacOS/Linux or Powershell for Windows)
     
 <b>For Windows user, you may want to use QtCreator (installed along with Qt in Step 1) to open simple-qt-gui.pro and compile if you are not familiar with Powershell.</b>
     
-Step 5: Run the executable file.
+<b>Step 5:</b> Run the executable file.
 
     MacOS (Terminal): open -a simple-qt-gui.app
 
