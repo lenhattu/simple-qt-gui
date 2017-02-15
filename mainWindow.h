@@ -3,9 +3,9 @@
 #include <QPushButton>
 #include <QMainWindow>
 #include <QComboBox>
-#include <QStandardItemModel>
 #include <QMenu>
 #include <QLabel>
+#include <QLineEdit>
 #include <QtGui>
 
 using namespace std;
@@ -19,8 +19,7 @@ class MainWindow : public QMainWindow
     public slots:
         void resizeMenu();
     private:
-        QStandardItemModel* model;
         QPushButton *btnOption;
         QMenu *menuOption;
-        QLabel *lbOption;
+        QLineEdit* editNumBT;
 };
