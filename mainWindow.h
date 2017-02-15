@@ -20,7 +20,10 @@ class MainWindow : public QMainWindow
         QLabel* lbOption;
         QLabel* lbNumBT;
 
+        vector<QString> list;
+
         void init();
         void input();
         void setup();
+        void output(QString path);
 };

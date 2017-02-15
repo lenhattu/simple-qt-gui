@@ -111,7 +111,6 @@ void MainWindow::onGenerate()
 {
     //check selected options
     bool checked = false;
-    vector<QString> list;
     for (int i = 0; i < menuOption->actions().count(); i++)
     {
         if (menuOption->actions().at(i)->isChecked())
@@ -139,7 +138,44 @@ void MainWindow::onGenerate()
     }
     else
     {
+        //trigger save file dialog to let user choose where to save result
+        QString path = QFileDialog::getSaveFileName(this, tr("Save Result"), "", "Parchive File (*.par)");
+        if (path != NULL) //is NULL when user clicks cancel
+            this->output(path);
+        //go to Channel window
         channelWindow = new ChannelWindow(this, list);
         channelWindow->show();
     }
+}
+
+//output result to file
+void MainWindow::output(QString path)
+{
+    //open file
+    QFile out(path);
+    if (!out.open(QIODevice::WriteOnly))
+    {
+        QMessageBox errorMsg;
+        errorMsg.critical(0, "Error", "Unable to open file to write!");
+        errorMsg.setFixedSize(500, 200);
+        return;
+    }
+    QTextStream writer(&out);
+    //write
+    int count = this->editNumBT->text().toInt();
+    writer << "COMPARTMENT_VARIABLE_TARGETS " << count << endl;
+    writer << "BRANCHTYPE" << endl;
+    for (int i = 1; i <= count; i++)
+    {
+        writer << i;
+        for (unsigned long j = 0; j < list.size(); j++)
+            writer << " " << list[j];
+        writer << endl;
+    }
+    //close
+    out.close();
+    //success msg
+    QMessageBox doneMsg;
+    doneMsg.information(0, "Saved", "The result has been saved!");
+    doneMsg.setFixedSize(500, 200);
 }

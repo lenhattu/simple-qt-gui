@@ -8,6 +8,7 @@
 #include <QtGui>
 #include <QString>
 #include <QMessageBox>
+#include <QFileDialog>
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -41,6 +42,11 @@ class ChannelWindow : public QMainWindow
         QLabel* lbOutput;
         QLabel* lbChannelType;
 
+        vector<QString> listInput;
+        vector<QString> listOutput;
+        vector<QString> listType;
+
         void init();
         void setup();
+        void output(QString path);
 };
