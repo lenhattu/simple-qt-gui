@@ -16,3 +16,7 @@ simple-qt-gui.app/Contents/MacOS/simple-qt-gui
 moc_mainWindow.cpp
 
 moc_predefs.h
+
+moc_channelWindow.cpp
+
+moc_channelWindow.cpp

@@ -2,11 +2,20 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+    this->setFixedSize(400, 200);
+    this->setWindowTitle("Simple GUI");
     init();
 }
 
 MainWindow::~MainWindow()
 {
+    delete btnOption;
+    delete menuOption;
+    delete editNumBT;
+    delete btnGenerate;
+    delete channelWindow;
+    delete lbOption;
+    delete lbNumBT;
 }
 
 //init
@@ -102,13 +111,13 @@ void MainWindow::onGenerate()
 {
     //check selected options
     bool checked = false;
-    QMenu* newMenu = new QMenu;
+    vector<QString> list;
     for (int i = 0; i < menuOption->actions().count(); i++)
     {
         if (menuOption->actions().at(i)->isChecked())
         {
             checked = true;
-            newMenu->addAction(menuOption->actions().at(i));
+            list.push_back(menuOption->actions().at(i)->text());
         }
     }
     //check number of branchtypes
@@ -127,11 +136,10 @@ void MainWindow::onGenerate()
         QMessageBox errorMsg;
         errorMsg.critical(0, "Error", "Invalid input!");
         errorMsg.setFixedSize(500, 200);
-        delete newMenu;
     }
     else
     {
-        channelWindow = new ChannelWindow(this);
+        channelWindow = new ChannelWindow(this, list);
         channelWindow->show();
     }
 }
