@@ -81,7 +81,7 @@ void MainWindow::setup()
     lbOption->setGeometry(25, 50, 150, 40);
 
     //number of branchtypes label
-    lbNumBT->setText("Number of branchtypes:");
+    lbNumBT->setText("Numb of branchtypes:");
     lbNumBT->setGeometry(25, 55, 150, 100);
 
     //show menu event -> rescale width of menu
